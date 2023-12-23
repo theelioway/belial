@@ -1,0 +1,32 @@
+{
+  "description": "a schema parser library, the elioWay",
+  "disambiguatingDescription": "with words clothed in reason's garb,   Counselled ignoble ease and peaceful sloth",
+  "identifier": "belial",
+  "mainEntityOfPage": "SoftwareSourceCode",
+  "name": "@elioway/belial",
+  "sameAs": "https://Angels.theElioWay.com/",
+  "subjectOf": "Angels",
+  "url": "https://belial.Angels.theElioWay.com",
+  "bin": "./bin/index.js",
+  "dependencies": {
+    "@elioway/abdiel": "file:../abdiel"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "prettier": "3.1.1"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./utils": "./utils/index.js",
+    "./promised": "./belial.js"
+  },
+  "main": "./src/index.js",
+  "private": true,
+  "scripts": {
+    "belial": "node ./belial.js",
+    "prettier": "prettier . --list-different --write",
+    "test": "mocha"
+  },
+  "type": "module"
+}

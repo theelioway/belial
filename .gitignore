@@ -1,0 +1,12 @@
+.cache
+.env
+.env.fish
+.private
+*.csv
+build
+dist
+node_modules
+public
+temp.db
+venv*
+ItemList/itemListElement

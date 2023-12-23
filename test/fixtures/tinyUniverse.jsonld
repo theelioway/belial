@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@type": "rdfs:Class",
+      "rdfs:label": "Cosmos",
+      "rdfs:comment": "Comment Cosmos"
+    },
+    {
+      "@type": "rdf:Property",
+      "rdfs:label": "size",
+      "rdfs:comment": "Comment size",
+      "d:/domainIncludes": { "@id": "d:/Cosmos" },
+      "d:/rangeIncludes": [{ "@id": "d:/Bigness" }, { "@id": "d:/Text" }]
+    },
+    { 
+      "@type": "rdfs:Class",
+      "rdfs:label": { "@language": "en", "@value": "Bigness" },
+      "rdfs:comment": "Comment Bigness"
+    },
+    {
+      "@type": "d:/Bigness",
+      "rdfs:label": "Big",
+      "rdfs:comment": "Comment Big"
+    },
+    {
+      "@type": ["rdfs:Class", "d:/DataType"],
+      "rdfs:label": "Text",
+      "rdfs:comment": "Comment Text"
+    }
+  ]
+}

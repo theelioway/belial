@@ -1,0 +1,29 @@
+[
+  {
+    "id": "Cosmos",
+    "type": ["Class"],
+    "comment": "Comment Cosmos"
+  },
+  {
+    "id": "size",
+    "type": ["Property"],
+    "comment": "Comment size",
+    "domainIncludes": ["Cosmos"],
+    "rangeIncludes": ["Bigness", "Text"]
+  },
+  {
+    "id": "Bigness",
+    "type": ["Class"],
+    "comment": "Comment Bigness"
+  },
+  {
+    "id": "Big",
+    "type": ["Bigness"],
+    "comment": "Comment Big"
+  },
+  {
+    "id": "Text",
+    "type": ["Class", "DataType"],
+    "comment": "Comment Text"
+  }
+]

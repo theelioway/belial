@@ -1,0 +1,18 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [ 
+    { "@type": "rdfs:Class", "rdfs:label": "Cosmos" },
+    { "@type": "rdfs:Class", "rdfs:label": "Bigness" },
+    { "@type": ["rdfs:Class", "d:/DataType"], "rdfs:label": "Integer" },
+    {
+      "@type": "rdf:Property",
+      "rdfs:label": "isBig",
+      "d:/domainIncludes": { "@id": "d:/Cosmos" },
+      "d:/rangeIncludes": [{ "@id": "d:/Bigness" }, { "@id": "d:/Text" }]
+    }
+  ]
+}

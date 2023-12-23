@@ -1,0 +1,20 @@
+[
+  {
+    "id": "Cosmos",
+    "type": ["Class"]
+  },
+  {
+    "id": "Bigness",
+    "type": ["Class"]
+  },
+  {
+    "id": "Integer",
+    "type": ["Class", "DataType"]
+  },
+  {
+    "id": "isBig",
+    "type": ["Property"],
+    "domainIncludes": ["Cosmos"],
+    "rangeIncludes": ["Bigness", "Text"]
+  }
+]
