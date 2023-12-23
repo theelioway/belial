@@ -1,4 +1,4 @@
-![](https://elioway.gitlab.io/elioangels/belial/elio-belial-logo.png)
+![](./postcard.jpg)
 
 > with words clothed in reason’s garb,
 > Counselled ignoble ease and peaceful sloth, **the elioWay**

@@ -5,7 +5,7 @@ import belial from "../belial.js";
 should();
 
 describe("module | belial", () => {
-  it("all of belial without raising an error", async () => {
+  it("exports these functions", async () => {
     let oldab = await belial();
     Object.keys(oldab).should.be.eql([
       "defaultSort",
