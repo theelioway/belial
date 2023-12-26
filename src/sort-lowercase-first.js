@@ -1,3 +1,4 @@
+"use strict";
 export const intlCollator = Intl.Collator("kf", { caseFirst: "upper" }).compare;
 
 export const defaultSort = (a, b) => {

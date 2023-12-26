@@ -8,7 +8,7 @@ should();
 
 describe("function | filterPropertiesOf", () => {
   it("filtered `tinyUniverse` properties of `Cosmos`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/tinyUniverse-simplified-20231222.json",
     );
@@ -18,7 +18,7 @@ describe("function | filterPropertiesOf", () => {
       .should.eql(["size"]);
   });
   it("filtered `schemaorgv9.0` properties of `Thing`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/schemaorg-simplified-20231222.json",
     );

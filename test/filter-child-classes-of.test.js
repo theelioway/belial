@@ -8,7 +8,7 @@ should();
 
 describe("function | filterChildclassesOf", () => {
   it("filtered `tinyUniverse` descendant classes of `Cosmos`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/tinyUniverse-simplified-20231222.json",
     );
@@ -18,7 +18,7 @@ describe("function | filterChildclassesOf", () => {
       .should.eql([]);
   });
   it("filtered `schemaorgv9.0` descendant classes of `CommunicateAction`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/schemaorg-simplified-20231222.json",
     );

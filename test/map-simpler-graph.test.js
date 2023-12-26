@@ -16,18 +16,19 @@ let newFixtureDate = false;
 
 describe("function | mapSimplerGraph", () => {
   it("simplified the `quantumUniverse` graph", async () => {
-    const simpler = readGraphFileRelatively(
+    let simpler = await readGraphFileRelatively(
       import.meta.url,
       "./fixtures/quantumUniverse.jsonld",
-    ).map(mapSimplerGraph("d:/"));
+    );
+    simpler = simpler.map(mapSimplerGraph("d:/"));
     if (newFixtureDate) {
-      writeJsonFileRelatively(
+      await writeJsonFileRelatively(
         import.meta.url,
         `./fixtures/quantumUniverse-simplified-${newFixtureDate}.json`,
         simpler,
       );
     }
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/quantumUniverse-simplified-20231222.json",
     );
@@ -54,10 +55,11 @@ describe("function | mapSimplerGraph", () => {
     simpler.should.eql(graph);
   });
   it("simplified the `tinyUniverse` graph", async () => {
-    const simpler = readGraphFileRelatively(
+    let simpler = await readGraphFileRelatively(
       import.meta.url,
       "./fixtures/tinyUniverse.jsonld",
-    ).map(mapSimplerGraph("d:/"));
+    );
+    simpler = simpler.map(mapSimplerGraph("d:/"));
     simpler.should.eql([
       {
         id: "Cosmos",
@@ -88,31 +90,32 @@ describe("function | mapSimplerGraph", () => {
       },
     ]);
     if (newFixtureDate) {
-      writeJsonFileRelatively(
+      await writeJsonFileRelatively(
         import.meta.url,
         `./fixtures/tinyUniverse-simplified-${newFixtureDate}.json`,
         simpler,
       );
     }
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/tinyUniverse-simplified-20231222.json",
     );
     simpler.should.eql(graph);
   });
   it("simplified the `schemaorgv9.0` graph", async () => {
-    const simpler = readGraphFileRelatively(
+    let simpler = await readGraphFileRelatively(
       import.meta.url,
       "../schemaorg/data/releases/9.0/schemaorg-all-http.jsonld",
-    ).map(mapSimplerGraph("http://schema.org/"));
+    );
+    simpler = simpler.map(mapSimplerGraph("http://schema.org/"));
     if (newFixtureDate) {
-      writeJsonFileRelatively(
+      await writeJsonFileRelatively(
         import.meta.url,
         `./fixtures/schemaorg-simplified-${newFixtureDate}.json`,
         simpler,
       );
     }
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/schemaorg-simplified-20231222.json",
     );

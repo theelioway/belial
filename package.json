@@ -1,10 +1,10 @@
 {
-  "description": "a schema parser library, the elioWay",
+  "description": "A library of functions for parsing the schemaorg jsonld graph.",
   "disambiguatingDescription": "with words clothed in reason's garb,   Counselled ignoble ease and peaceful sloth",
   "identifier": "belial",
   "mainEntityOfPage": "SoftwareSourceCode",
   "name": "@elioway/belial",
-  "sameAs": "https://Angels.theElioWay.com/",
+  "sameAs": "https://en.wikipedia.org/wiki/Belial",
   "subjectOf": "Angels",
   "url": "https://belial.Angels.theElioWay.com",
   "bin": "./bin/index.js",

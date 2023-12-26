@@ -1,7 +1,7 @@
 "use strict";
 import { should } from "chai";
 
-import sortById from "../src/sort-by-id.js";
+import objectArraySortById from "../src/object-array-sort-by-id.js";
 
 should();
 
@@ -12,9 +12,9 @@ const SIMPLEGRAPH = [
   { id: "postalCodeRange" },
   { id: "birthPlace" },
 ];
-describe("function | sortById", () => {
+describe("function | objectArraySortById", () => {
   it("sorts `SIMPLEGRAPH`", async () => {
-    SIMPLEGRAPH.sort(sortById)
+    SIMPLEGRAPH.sort(objectArraySortById)
       .map((p) => p.id)
       .should.eql([
         "Person",

@@ -8,7 +8,7 @@ should();
 
 describe("function | reduceDescendantClassesOf", () => {
   it("reduces `tinyUniverse` descendant classes of `Cosmos`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/tinyUniverse-simplified-20231222.json",
     );
@@ -17,7 +17,7 @@ describe("function | reduceDescendantClassesOf", () => {
       .should.eql([]);
   });
   it("reduces `schemaorgv9.0` descendant classes of `InformAction`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/schemaorg-simplified-20231222.json",
     );
@@ -27,7 +27,7 @@ describe("function | reduceDescendantClassesOf", () => {
       .should.eql(["ConfirmAction", "RsvpAction"]);
   });
   it("reduces `schemaorgv9.0` descendant classes of `CommunicateAction`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/schemaorg-simplified-20231222.json",
     );

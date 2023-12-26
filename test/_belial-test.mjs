@@ -13,12 +13,13 @@ describe("module | belial", () => {
       "filterPropertiesOf",
       "findOf",
       "mapSimplerGraph",
-      "propertyDefaultValueOf",
+      "objectArrayReduceProperties",
+      "objectArraySortById",
       "reduceAncestorClassesOf",
       "reduceDescendantClassesOf",
-      "sortById",
       "sortLowercaseFirst",
       "sortObjectEntriesLowercaseFirst",
+      "valueOf",
     ]);
   });
 });

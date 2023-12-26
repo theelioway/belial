@@ -8,14 +8,14 @@ should();
 
 describe("function | reduceAncestorClassesOf", () => {
   it("reduces `tinyUniverse` ancestor classes of `Cosmos`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/tinyUniverse-simplified-20231222.json",
     );
     graph.reduce(reduceAncestorClassesOf({ id: "Cosmos" }), []).should.eql([]);
   });
   it("reduces `schemaorgv9.0` ancestor classes of `RsvpAction`", async () => {
-    const graph = readJsonFileRelatively(
+    const graph = await readJsonFileRelatively(
       import.meta.url,
       "./fixtures/schemaorg-simplified-20231222.json",
     );

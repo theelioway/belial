@@ -2,8 +2,8 @@
 import {
   arrayAlways,
   objectAlways,
-  objectPicker,
-  objectPruner,
+  objectPick,
+  objectPrune,
   valueIsMeaningful,
 } from "@elioway/abdiel";
 
@@ -27,12 +27,10 @@ export const mapSimplerGraph = (DOMAIN) => {
   const valueAlways = objectAlways("@value");
 
   // Prune meaningless properties from an object.
-  const meaningfulPrune = objectPruner(([_, value]) =>
-    valueIsMeaningful(value),
-  );
+  const meaningfulPrune = objectPrune(([_, value]) => valueIsMeaningful(value));
 
   // Pick only these properties.
-  const tersePick = objectPicker([
+  const tersePick = objectPick([
     "id",
     "type",
     "comment",
@@ -66,13 +64,14 @@ export const mapSimplerGraph = (DOMAIN) => {
       .map(stringReplaceDomain) // replace domain name.
       .map(stringReplaceRDF); // replace rdf.
 
-    // Simpler "type": Assign the property as an array...
+    // Simpler "subPropertyOf": Assign the property as an array...
     entity["subPropertyOf"] = arrayAlways(entity["rdfs:subPropertyOf"])
       .map(idAlways) // pull the value out of the @id property if object.
       .filter(valueIsMeaningful) // filter out meaningless values.
       .map(stringReplaceDomain) // replace domain name.
       .map(stringReplaceRDF); // replace rdf.
 
+    // Simpler "subClassOf": Assign the property as an array...
     entity["subClassOf"] = arrayAlways(entity["rdfs:subClassOf"])
       .map(idAlways) // pull the value out of the @id property if object.
       .filter(valueIsMeaningful) // filter out meaningless values.

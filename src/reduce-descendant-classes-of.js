@@ -1,13 +1,13 @@
 "use strict";
 
 export const reduceDescendantClassesOf =
-  (entity) => (acc, potentialDesendant, _, array) => {
+  (entity) => (acc, potentialDesendant, _, GRAPH) => {
     const { subClassOf } = potentialDesendant;
     const { id } = entity;
     if (subClassOf && subClassOf.includes(id)) {
       acc.push(
         potentialDesendant,
-        ...array.reduce(reduceDescendantClassesOf(potentialDesendant), []),
+        ...GRAPH.reduce(reduceDescendantClassesOf(potentialDesendant), []),
       );
     }
     return acc;

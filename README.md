@@ -1,11 +1,11 @@
 ![](./postcard.jpg)
 
-> with words clothed in reason’s garb,
-> Counselled ignoble ease and peaceful sloth, **the elioWay**
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with words clothed in reason’s garb,
+> Counselled ignoble ease and peaceful sloth
 
 # belial
 
-A **SchemaOrg** JSONLD data parser library.
+A library of functions for parsing the schemaorg jsonld graph.
 
 - [belial Documentation](https://elioway.gitlab.io/elioangels/belial/)
 
