@@ -42,4 +42,3 @@ const belial = {
   properties,
 };
 
-console.log({ [id]: belial });

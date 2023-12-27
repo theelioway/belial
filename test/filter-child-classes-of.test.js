@@ -13,7 +13,7 @@ describe("function | filterChildclassesOf", () => {
       "./fixtures/tinyUniverse-simplified-20231222.json",
     );
     graph
-      .filter(filterChildClassesOf("Cosmos"))
+      .filter(filterChildClassesOf({ id:"Cosmos"}))
       .map((p) => p.id)
       .should.eql([]);
   });

@@ -12,7 +12,8 @@ describe("function | reduceAncestorClassesOf", () => {
       import.meta.url,
       "./fixtures/tinyUniverse-simplified-20231222.json",
     );
-    graph.reduce(reduceAncestorClassesOf({ id: "Cosmos" }), []).should.eql([]);
+    graph.reduce(reduceAncestorClassesOf({ id: "Cosmos" }), [])
+    .map((p) => p.id).should.eql([]);
   });
   it("reduces `schemaorgv9.0` ancestor classes of `RsvpAction`", async () => {
     const graph = await readJsonFileRelatively(
@@ -34,6 +35,30 @@ describe("function | reduceAncestorClassesOf", () => {
         "CommunicateAction",
         "InformAction",
         "InteractAction",
+        "Thing",
+      ]);
+  });
+
+  it("reduces `schemaorgv9.0` ancestor classes of `LiveBlogPosting`", async () => {
+    const graph = await readJsonFileRelatively(
+      import.meta.url,
+      "./fixtures/schemaorg-simplified-20231222.json",
+    );
+    graph
+      .reduce(
+        reduceAncestorClassesOf({
+          id: "LiveBlogPosting",
+          subClassOf: ["BlogPosting"],
+        }),
+        [],
+      )
+      .map((p) => p.id)
+      .sort()
+      .should.eql([
+        "Article",
+        "BlogPosting",
+        "CreativeWork",
+        "SocialMediaPosting",
         "Thing",
       ]);
   });

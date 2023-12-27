@@ -44,5 +44,5 @@ const belial = {
   properties,
 };
 
-console.log({ [id]: belial });
+console.assert({ [id]: belial }==={});
 ```

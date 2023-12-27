@@ -7,7 +7,6 @@ const grapher = async () => {
     "../schemaorg/data/releases/9.0/schemaorg-all-http.jsonld",
   );
   GRAPH = GRAPH.map(mapSimplerGraph("http://schema.org/"));
-  console.log(GRAPH);
 };
 
 grapher();
