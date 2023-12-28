@@ -17,7 +17,8 @@ const testTransformer = () => "found!";
 describe("function | objectArrayReduceProperties", () => {
   it("reduces `SIMPLEGRAPH` with `testTransformer`", async () => {
     SIMPLEGRAPH.reduce(
-      objectArrayReduceProperties(testTransformer), {}
+      objectArrayReduceProperties(testTransformer),
+      {},
     ).should.eql({
       Person: "found!",
       birthPlace: "found!",

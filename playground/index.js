@@ -41,4 +41,3 @@ const belial = {
   children,
   properties,
 };
-

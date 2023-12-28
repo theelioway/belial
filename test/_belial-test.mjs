@@ -13,6 +13,7 @@ describe("module | belial", () => {
       "filterPropertiesOf",
       "findOf",
       "mapSimplerGraph",
+      "metaOf",
       "objectArrayReduceProperties",
       "objectArraySortById",
       "reduceAncestorClassesOf",

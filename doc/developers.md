@@ -1,7 +1,11 @@
 # belial Developers
 
 ```javascript
-import { readGraphFileRelatively } from "@elioway/belial/utils";
+import {
+  fsImportMetaUrlPath,
+  fsReadJson,
+  objectArraySortByProperty,
+} from "@elioway/abdiel";
 import {
   filterChildClassesOf,
   filterPropertiesOf,
@@ -11,30 +15,40 @@ import {
   reduceDescendantClassesOf,
 } from "@elioway/belial";
 
+export const getGraph = async () => {
+  let schemaPath = fsImportMetaUrlPath(
+    import.meta.url,
+    "../schemaorg/data/releases/9.0/schemaorg-all-http.jsonld",
+  );
+  const GRAPH = await fsReadJson(schemaPath);
+  return (
+    GRAPH["@GRAPH"]
+      // Normalise for elioWay use.
+      .map(mapSimplerGraph("http://schema.org/"))
+      // Sort all the entities so that output propeties of objects are also;
+      .sort(objectArraySortByProperty("id"))
+  );
+};
+
 const mapIds = ({ id }) => id;
 
-const graph = readGraphFileRelatively(
-  import.meta.url,
-  "../schemaorg/data/releases/9.0/schemaorg-all-http.jsonld",
-).map(mapSimplerGraph("http://schema.org/"));
+const GRAPH = getGraph();
 
 const id = "RsvpAction";
 
-let entity = graph.find(findOf({ id }));
+let entity = GRAPH.find(findOf({ id }));
 
-const ancestors = graph
-  .reduce(reduceAncestorClassesOf(entity), [])
+const ancestors = GRAPH.reduce(reduceAncestorClassesOf(entity), [])
   .map(mapIds)
   .sort();
 
-const descendants = graph
-  .reduce(reduceDescendantClassesOf(entity), [])
+const descendants = GRAPH.reduce(reduceDescendantClassesOf(entity), [])
   .map(mapIds)
   .sort();
 
-const children = graph.filter(filterChildClassesOf(entity)).map(mapIds).sort();
+const children = GRAPH.filter(filterChildClassesOf(entity)).map(mapIds).sort();
 
-const properties = graph.filter(filterPropertiesOf(entity)).map(mapIds).sort();
+const properties = GRAPH.filter(filterPropertiesOf(entity)).map(mapIds).sort();
 
 const belial = {
   ...entity,
@@ -44,5 +58,5 @@ const belial = {
   properties,
 };
 
-console.assert({ [id]: belial }==={});
+console.assert({ [id]: belial } === {});
 ```

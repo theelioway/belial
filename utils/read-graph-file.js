@@ -1,15 +1,9 @@
 "use strict";
-import { readJsonFile, readJsonFileRelatively } from "./read-json-file.js";
+import { fsReadJson } from "@elioway/abdiel";
 
 export const readGraphFile = async (schemaPath) => {
-  const GRAPH = await readJsonFile(schemaPath);
+  const GRAPH = await fsReadJson(schemaPath);
   return GRAPH["@graph"];
 };
-export const readGraphFileRelatively = async (
-  importMetaUrl,
-  pathRelatively,
-) => {
-  const GRAPH = await readJsonFileRelatively(importMetaUrl, pathRelatively);
-  return GRAPH["@graph"];
-};
+
 export default readGraphFile;

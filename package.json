@@ -18,7 +18,6 @@
   },
   "exports": {
     ".": "./src/index.js",
-    "./utils": "./utils/index.js",
     "./promised": "./belial.js"
   },
   "main": "./src/index.js",

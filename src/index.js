@@ -2,6 +2,7 @@ export { default as filterChildClassesOf } from "./filter-child-classes-of.js";
 export { default as filterPropertiesOf } from "./filter-properties-of.js";
 export { default as findOf } from "./find-of.js";
 export { default as mapSimplerGraph } from "./map-simpler-graph.js";
+export { default as metaOf } from "./meta-of.js";
 export { default as reduceAncestorClassesOf } from "./reduce-ancestor-classes-of.js";
 export { default as reduceDescendantClassesOf } from "./reduce-descendant-classes-of.js";
 export { default as objectArrayReduceProperties } from "./object-array-reduce-properties.js";
